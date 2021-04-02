@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="https://fonts.gstatic.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<script>
+const bu = document.getElementByClass("btn1").innerText;
+const ayarla = document.getElementByClass("form-control").innerText;
+var guild = <%= guild%>
+//eğer tıklandığında şeyi yaparsın ab
+//tamam ab saol hehe
+<%if (db.fetch(`qüfr_engel_koruma_${guild.id}`) == 'açık') {%>
+<%db.set(`qüfr_engel_koruma_${guild.id}`, 'kapalı')%>
+//db nası tanımlı ise
+
+
+<%} else { %>
+<%db.set(`qüfr_engel_koruma_${guild.id}`, 'açık')%>
+
+<% }%>
+</script>
+
+ <style>
+
+
+.btn1 {
+background-color:#99a3ec;
+border:0px solid #99a3ec;
+display:inline-block;
+cursor:pointer;
+color:#ffffff;
+font-family:Arial;
+font-size:19px;
+padding:20px 63px;
+text-decoration:none;
+text-shadow:0px 1px 0px #2f6627;
+}
+.btn1:hover {
+background-color:#99a3ec;
+}
+.btn1:active {
+position:relative;
+top:1px;
+}
+ 
+      
+.adresler{
+  position: relative;
+  left: 240px;
+  top: -58px;
+}
+
+.adresler2{
+  position: relative;
+  left: 15px;
+  top: 40px;
+}
+
+    .username{
+  position: relative;
+  left: 50px;
+  top: 22px;
+}
+      .avatar{
+  position: relative;
+  left: 3px;
+  top: -7px;
+}
+      
+</style>
+
+<head>
+<style rel= "stylesheet" type="text/css">
+
+.custom-info {display: flex;align-items: center;}
+
+.custom-info .input-box button.btn1 {
+    min-width: 320px;
+font-family: 'Walter Turncoat', cursive;
+}
+
+
+</style>
+</head>
+  
+  <title><%= guild.name %></title>
+    
+
+
+<div class="custom-info">
+<fieldset>
+
+<legend><%- guild.name%> </legend>
+<div class="input-box">
+      <button type="submit" class="btn1">Gönder</button>
+</div>
+
+
+</fieldset>
+</div>
+</body></html>
+
